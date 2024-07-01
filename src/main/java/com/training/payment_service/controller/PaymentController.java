@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/payment")
+@RequestMapping(value = "/pay")
 @AllArgsConstructor
 public class PaymentController {
 
     private final PaymentService paymentService;
 
-    @PostMapping("/save")
+    @PostMapping("/savePayment")
     public ResponseEntity<Payment> paymentSave(@RequestBody Payment payment){
         return ResponseEntity.ok(paymentService.paymentSave(payment));
     }
