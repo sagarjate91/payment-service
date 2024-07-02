@@ -1,9 +1,6 @@
 package com.training.payment_service.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +15,7 @@ import java.util.UUID;
 public class Payment {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer paymentId;
     private String paymentStatus;
     private String transactionId= UUID.randomUUID().toString();
